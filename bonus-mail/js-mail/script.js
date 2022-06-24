@@ -6,21 +6,32 @@ stampa in console un messaggio appropriato sull’esito del controllo.
 ("Benvenuto" se la mail è nella lista, "Spiacenti" se non lo è);
 */
 
+// Recupero gli elementi dal DOM
+// Input
+const inputMail = document.getElementById("email");
+// Bottoni
+const buttonLogin = document.getElementById("login");
+// Paragrafi
+const phmessage = document.getElementById("message");
+
 //Creo l'array con la lista delle mail valide
 const validMails = ["pinko@live.it", "daniele@live.it", "dinamutan@live.it", "twd@live.it", "mike@live.it",];
 
-//Creo una const con l'input mail da parte dell'utente per accedere
-const inputMail = prompt("Inserisci l'email per accedere");
+// Creo l'evento al click del bottone per la verifica
+buttonLogin.addEventListener("click", function(){
 
-//Creo la variabile message già definita nel caso l'email non risultasse corretta
-let message = "Spiacenti" 
+  const mail = inputMail.value;
 
-//Creo un ciclo for per verificare se l'email inputata è corretta
-for (i=0; i<validMails.length; i++) {
-  if (validMails[i] === inputMail) {
-    message = "Benvenuto"
+  //Creo la variabile message già definita nel caso l'email non risultasse corretta
+  let message = "Spiacenti" 
+  
+  //Creo un ciclo for per verificare se l'email inputata è corretta
+  for (i=0; i<validMails.length; i++) {
+    if (validMails[i] === mail) {
+      message = "Benvenuto"
+    }
   }
-}
 
-// Mando a schermo il messaggio con l'esito
-alert(message);
+  // Stampo in pagina il messaggio con l'esito
+  phmessage.innerText = message;
+})
