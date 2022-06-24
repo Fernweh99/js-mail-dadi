@@ -9,8 +9,8 @@ punteggio più alto e stampa  in console il risultato
 // bottoni
 const buttonPlay = document.getElementById("play");
 // Paragrafi
-const phNumberPlayer = document.getElementById("number-player");
-const phNumberComputer = document.getElementById("number-computer");
+const divNumberPlayer = document.getElementById("number-player");
+const divNumberComputer = document.getElementById("number-computer");
 const phGameResult = document.getElementById("game-result");
 
 buttonPlay.addEventListener("click", function(){
@@ -21,20 +21,20 @@ buttonPlay.addEventListener("click", function(){
   
   //Creo una variabile già definita nel caso in cui il giocatore non dovesse vincere o pareggiare
   let result = "Ha vinto il computer!";
-  
+
   //Eseguo un controllo su chi ha vinto e se necessario cambio il risultato
   if (randomNumberPlayer > randomNumberComputer) {
     result = "Ha vinto il giocatore!";
+    
   }
   else if (randomNumberPlayer === randomNumberComputer) {
     result = "Avete pareggiato!";
   }
-  
-  //Stampo i numeri del giocatore e del computer e mando il risultato su finestra
-  phNumberPlayer.innerText = randomNumberPlayer;
-  phNumberComputer.innerText = randomNumberComputer;
-  phGameResult.innerText = result;
 
+  //Stampo i numeri del giocatore e del computer e mando il risultato su finestra
+  divNumberPlayer.innerHTML = `<img src="img/d${randomNumberPlayer}.gif" alt="dado">`;
+  divNumberComputer.innerHTML = `<img src="img/d${randomNumberComputer}.gif" alt="dado">`;
+  phGameResult.innerText = result;
   
 })
   
