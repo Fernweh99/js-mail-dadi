@@ -1,0 +1,27 @@
+body {
+  background-color: lightslategray;
+}
+
+h2 {
+  background-color:firebrick;
+  color: white;
+  border: 1px solid black;
+  padding: 5px 0;
+
+}
+
+.card {
+  margin-top: 2px;
+  border-color: black;
+}
+
+.card-body {
+  background-color:firebrick;
+  color: white;
+}
+
+#email {
+  width: 250px;
+  height: 35px;
+  border-radius: 12px;
+}
