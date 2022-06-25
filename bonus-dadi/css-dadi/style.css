@@ -5,3 +5,14 @@
 button#play {
   margin: 30px auto;
 }
+
+.box {
+  display: inline-block;
+  text-align: center;
+}
+
+.box-wins {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
